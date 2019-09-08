@@ -21,7 +21,7 @@ class Scraper
       }
       binding.pry
     end
-    
+
     students
   end
 
