@@ -17,8 +17,10 @@ class Scraper
       students[student.to_sym] = {
         :name => student.css(".student-card").first.css("h4.student-name").text.strip,
         :location => student.css(".student-card").first.css("p.student-location").text.strip,
-        :profile_url => student.css(".student-card").first.css("a").attribute("href").text.strip
         binding.pry
+
+        :profile_url => student.css(".student-card").first.css("a").attribute("href").text.strip
+
       }
 
     end
