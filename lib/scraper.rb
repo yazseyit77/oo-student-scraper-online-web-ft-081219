@@ -14,8 +14,6 @@ class Scraper
     students = {}
     #binding.pry
     index_url.css(".student-card").each do |student|
-      binding.pry
-
       students[student.to_sym] = {
         :name => student.css(".student-card").first.css("h4.student-name").text.strip,
         :location => student.css(".student-card").first.css("p.student-location").text.strip,
@@ -24,6 +22,8 @@ class Scraper
     end
 
     students
+    binding.pry
+
   end
 
   def self.scrape_profile_page(profile_url)
