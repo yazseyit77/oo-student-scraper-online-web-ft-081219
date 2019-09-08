@@ -26,7 +26,7 @@ class Scraper
     profile = Nokogiri::HTML(open(profile_url))
 
     person = {}
-    profile.css.each do 
+    profile.css.each do
 
   end
 
