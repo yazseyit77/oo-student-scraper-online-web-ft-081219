@@ -11,7 +11,6 @@ class Scraper
     #location: student.css(".student-card").first.css("p.student-location").text.strip
     #profile_url: student.css(".student-card").first.css("a").attribute("href").text.strip
     students = []
-    #binding.pry
     page.css(".student-card").each do |student|
       student_info = {
         :name => student.css(".student-card").first.css("h4.student-name").text.strip,
