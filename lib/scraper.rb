@@ -15,11 +15,12 @@ class Scraper
     #binding.pry
     index_url.css(".student-card").each do |student|
       students[student.to_sym] = {
+        binding.pry
+
         :name => student.css(".student-card").first.css("h4.student-name").text.strip,
         :location => student.css(".student-card").first.css("p.student-location").text.strip,
         :profile_url => student.css(".student-card").first.css("a").attribute("href").text.strip
       }
-      binding.pry
     end
 
     students
