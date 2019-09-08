@@ -24,41 +24,22 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     profile = Nokogiri::HTML(open(profile_url))
-    person = {}
-
-    icons = profile.css.(".social-icon-container a").collect{|icon| icon.attribute("href").value}
-    icons.each do |link|
-      if link.include?("twitter")
-        person[:twitter] = link
-      elsif link.include?("linkedin")
-        person[:linkedin] = link
-      elsif link.include?("github")
-        person[:github] = link
-      elsif link.include?(".com")
-        person[:blog] = link
+      person = {}
+    icons = profile.css(".social-icon-container a").collect{|icon| icon.attribute("href").value}
+      icons.each do |link|
+        if link.include?("twitter")
+          person[:twitter] = link
+        elsif link.include?("linkedin")
+          person[:linkedin] = link
+        elsif link.include?("github")
+          person[:github] = link
+        elsif link.include?(".com")
+          person[:blog] = link
+        end
       end
-    end
-    person[:profile_quote] = profile.css(".profile-quote").text
-    person[:bio] = profile.css("div.description-holder p").text
-    person
-
-  # profile = Nokogiri::HTML(open(profile_url))
-  #     person = {}
-  #   icons = profile.css(".social-icon-container a").collect{|icon| icon.attribute("href").value}
-  #     icons.each do |link|
-  #       if link.include?("twitter")
-  #         person[:twitter] = link
-  #       elsif link.include?("linkedin")
-  #         person[:linkedin] = link
-  #       elsif link.include?("github")
-  #         person[:github] = link
-  #       elsif link.include?(".com")
-  #         person[:blog] = link
-  #       end
-  #     end
-  #     person[:profile_quote] = profile.css(".profile-quote").text
-  #     person[:bio] = profile.css("div.description-holder p").text
-  #     person
+      person[:profile_quote] = profile.css(".profile-quote").text
+      person[:bio] = profile.css("div.description-holder p").text
+      person
   end
 
 end
