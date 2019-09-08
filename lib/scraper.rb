@@ -26,7 +26,7 @@ class Scraper
     profile = Nokogiri::HTML(open(profile_url))
 
     person = {}
-    profile.css.each do
+    icons = profile.css.collect{|icon| icon.attribute("href").value}
 
   end
 
