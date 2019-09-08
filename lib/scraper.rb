@@ -43,23 +43,23 @@ class Scraper
   #   person[:bio] = profile.css("div.description-holder p").text
   #   person
 
-  page = Nokogiri::HTML(open(profile_url))
-      student = {}
+  profile = Nokogiri::HTML(open(profile_url))
+      person = {}
     container = page.css(".social-icon-container a").collect{|icon| icon.attribute("href").value}
       container.each do |link|
         if link.include?("twitter")
-          student[:twitter] = link
+          person[:twitter] = link
         elsif link.include?("linkedin")
-          student[:linkedin] = link
+          person[:linkedin] = link
         elsif link.include?("github")
-          student[:github] = link
+          person[:github] = link
         elsif link.include?(".com")
-          student[:blog] = link
+          person[:blog] = link
         end
       end
-      student[:profile_quote] = page.css(".profile-quote").text
-      student[:bio] = page.css("div.description-holder p").text
-      student
+      person[:profile_quote] = page.css(".profile-quote").text
+      person[:bio] = page.css("div.description-holder p").text
+      person
   end
 
 end
