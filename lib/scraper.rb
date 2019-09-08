@@ -39,7 +39,7 @@ class Scraper
       end
     end
     person[:profile_quote] = profile.css(".profile-quote").text
-    person[:BIO] = profile.css("div.bio-content p").text
+    person[:bio] = profile.css("div.bio-content p").text
     person
   end
 
