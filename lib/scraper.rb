@@ -18,7 +18,7 @@ class Scraper
         location: student.css(".student-card").first.css("p.student-location").text.strip
         profile_url: student.css(".student-card").first.css("a").attribute("href").text.strip
       }
-
+    end
 
   end
 
