@@ -26,7 +26,7 @@ class Scraper
     profile = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/students/ryan-johnson.html"))
 
     person = {}
-    icons = profile.css.(".social-icon-container a")collect{|icon| icon.attribute("href").value}
+    icons = profile.css.(".social-icon-container a").collect{|icon| icon.attribute("href").value}
     icons.each do |link|
       if link.include?("twitter")
         person[:twitter] = link
