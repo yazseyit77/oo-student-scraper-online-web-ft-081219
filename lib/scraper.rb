@@ -12,7 +12,7 @@ class Scraper
     students = []
 
     index_url.css(".student-card").each do |student|
-    
+
 
     index_url.css(".student-card").text.strip
 
