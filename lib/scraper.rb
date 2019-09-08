@@ -13,7 +13,7 @@ class Scraper
     students = {}
 
     index_url.css(".student-card").each do |student|
-      students[student.to_sym] 
+      students[student.to_sym]
 
 
     index_url.css(".student-card").text.strip
