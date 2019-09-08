@@ -9,6 +9,11 @@ class Scraper
     #location: index_url.css(".student-card").first.css("p.student-location").text.strip
     #profile_url: index_url.css(".student-card").first.css("a").attribute("href").text.strip
 
+    students = []
+
+    index_url.css(".student-card").each do |student|
+    
+
     index_url.css(".student-card").text.strip
 
   end
