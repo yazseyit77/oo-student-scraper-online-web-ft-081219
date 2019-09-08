@@ -19,7 +19,7 @@ class Scraper
         profile_url: student.css(".student-card").first.css("a").attribute("href").text.strip
       }
     end
-
+    students
   end
 
   def self.scrape_profile_page(profile_url)
