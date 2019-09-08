@@ -20,7 +20,7 @@ class Scraper
         :profile_url => student.css(".student-card").first.css("a").attribute("href").text.strip
         binding.pry
       }
-      
+
     end
 
     students
