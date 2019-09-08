@@ -15,5 +15,3 @@ class Scraper
   end
 
 end
-
-index_url.css(".student-card").first.css("h4.student-name").text.strip
