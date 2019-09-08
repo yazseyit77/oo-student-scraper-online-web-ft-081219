@@ -38,6 +38,7 @@ class Scraper
         person[:blog] = link
       end
     end
+    person
   end
 
 end
