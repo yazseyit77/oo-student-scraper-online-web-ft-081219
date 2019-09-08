@@ -23,7 +23,7 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-
+    profile = Nokogiri::HTML(open(profile_url))
   end
 
 end
