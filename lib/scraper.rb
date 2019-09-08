@@ -23,7 +23,7 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    profile = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/students/ryan-johnson.html"))
+    profile = Nokogiri::HTML(open(profile_url))
 
     person = {}
     icons = profile.css.(".social-icon-container a").collect{|icon| icon.attribute("href").value}
