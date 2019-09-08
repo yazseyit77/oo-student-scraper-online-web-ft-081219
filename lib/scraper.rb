@@ -27,7 +27,15 @@ class Scraper
 
     person = {}
     icons = profile.css.collect{|icon| icon.attribute("href").value}
-
+    icons.each do |link|
+      if link.include?("twitter")
+        person[:twitter] = link
+      elsif link.include?("linkedin")
+        person[:linkedin] = link
+      elsif link.include?("github")
+        person[:github] = link
+      elsif link.include?("blog")
+        person[:blog] = link
   end
 
 end
